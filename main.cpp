@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <string>
 
 std::vector<std::string> fizz_buzz(int n) {
   std::vector<std::string> output;
