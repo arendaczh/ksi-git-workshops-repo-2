@@ -1,24 +1,30 @@
 #include <iostream>
 
-void fizz_buzz(int n) {
+std::vector<std::string> fizz_buzz(int n) {
+  std::vector<std::string> output;
+
   for (int i = 1; i <= n; ++i) {
     if (i % 3 == 0 && i % 5 == 0) {
-      std::cout << "FizzBuzz" << std::endl;
+      output.push_back("FizzBuzz");
     } else if (i % 3 == 0) {
-      std::cout << "Fizz" << std::endl;
+      output.push_back("Fizz");
     } else if (i % 5 == 0) {
-      std::cout << "Buzz" << std::endl;
+      output.push_back("Buzz");
     } else {
-      std::cout << i << std::endl;
+      output.push_back(i);
     }
   }
+
+  return output;
 }
 
 int main() {
   int n;
   std::cin >> n;
 
-  fizz_buzz(n);
+  for (auto line : fizz_buzz(n)) {
+    std::cout << line << std::endl;
+  }
 
   return 0;
 }
